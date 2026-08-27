@@ -46,7 +46,7 @@ resource "azurerm_linux_virtual_machine" "this" {
   name                            = "arti-vm"
   location                        = var.location
   resource_group_name             = azurerm_resource_group.this.name
-  size                            = "Standard_B1s"
+  size                            = "Standard_B2ats_v2"
   admin_username                  = "azureadmin"
   admin_password                  = var.admin_password
   disable_password_authentication = false
