@@ -19,4 +19,5 @@ variable "admin_password" {
   description = "Password for the virtual machine administrator account."
   type        = string
   sensitive   = true
+  default     = "P@ssw0rd1234!ChangeMe"
 }
