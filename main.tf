@@ -4,6 +4,7 @@ terraform {
       source  = "hashicorp/azurerm"
       version = "~> 4.0"
     }
+
     tls = {
       source  = "hashicorp/tls"
       version = "~> 4.0"
@@ -16,7 +17,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "this" {
-  name     = "vivek"
+  name     = "sonu"
   location = var.location
 }
 
