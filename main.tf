@@ -17,7 +17,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "this" {
-  name     = "vivek"
+  name     = "bdvt"
   location = var.location
 }
 
