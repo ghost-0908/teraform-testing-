@@ -17,26 +17,26 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "this" {
-  name     = "sonu"
+  name     = "nous"
   location = var.location
 }
 
 resource "azurerm_virtual_network" "this" {
-  name                = "nous-vnet"
+  name                = "arti-vnet"
   location            = var.location
   resource_group_name = azurerm_resource_group.this.name
   address_space       = ["10.0.0.0/16"]
 }
 
 resource "azurerm_subnet" "this" {
-  name                 = "nous-subnet"
+  name                 = "arti-subnet"
   resource_group_name  = azurerm_resource_group.this.name
   virtual_network_name = azurerm_virtual_network.this.name
   address_prefixes     = ["10.0.1.0/24"]
 }
 
 resource "azurerm_network_interface" "this" {
-  name                = "nous-nic"
+  name                = "arti-nic"
   location            = var.location
   resource_group_name = azurerm_resource_group.this.name
 
@@ -53,7 +53,7 @@ resource "tls_private_key" "vm_admin" {
 }
 
 resource "azurerm_linux_virtual_machine" "this" {
-  name                            = "nous"
+  name                            = "arti-vm"
   location                        = var.location
   resource_group_name             = azurerm_resource_group.this.name
   size                            = "Standard_B2ats_v2"
@@ -67,6 +67,7 @@ resource "azurerm_linux_virtual_machine" "this" {
   }
 
   os_disk {
+    name                 = "arti-vm-osdisk"
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
   }
